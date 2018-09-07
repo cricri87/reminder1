@@ -1,7 +1,10 @@
 <%= simple_form_for @friend do |f| %>
-  <%= f.input :first_name, label: 'Your first name please', error: 'first name is mandatory, please specify one' %>
-  <%= f.input :last_name, label: 'Your last name please', error: 'last name is mandatory, please specify one' %>
-  <%= f.input :nickname, label: 'Your nickname please' %>
-   <%= f.date_field :birthday %>
-  <%= f.button :submit %>
+  <%= f.input :first_name, label: 'First name', error: 'first name is mandatory, please specify one' %>
+  <%= f.input :last_name, label: 'Last name', error: 'last name is mandatory, please specify one' %>
+  <%= f.input :nickname, label: 'Nickname' %>
+  <div>
+    <label>Year of birth</label>
+  </div>
+   <%= f.date_field :birthday, label: 'Year of birth' %>
+  <%= f.button :submit, class: 'btn btn-success btn-xs' %>
 <% end %>
