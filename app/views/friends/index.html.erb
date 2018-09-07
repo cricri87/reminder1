@@ -1,0 +1,14 @@
+<h1 class="text-center"> <%= current_user.fullname %> </h1>
+<h2>List of all yout friends</h2>
+
+<ol>
+  <% @friends.each do |friend| %>
+  <%= link_to friend_path(friend) do %>
+   <li> <%= friend.first_name %> <%= friend.last_name %> Has been friends since <%= friend.created_at.strftime('%D') %> <%= link_to 'Delete a friend', friend, method: :delete, data: {confirm: "Are you sure?"} %>
+</li>
+   <% end %>
+
+  <% end %>
+</ol>
+
+<%= link_to 'Add friend', new_friend_path %>

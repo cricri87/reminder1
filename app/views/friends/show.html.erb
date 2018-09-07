@@ -1,0 +1,9 @@
+<h1> <%= @friend.nickname %> , <%= @age %> Years old!! </h1>
+<% if @days < 335 %>
+  <h4> Have birthday in <%= @days %> Days </h4>
+<% else %>
+  <h4> Birthday was <%= 365 - @days %> days ago..</h4>
+  <h6> Next birthday in <%= @days %> Days </h6>
+  <% end %>
+
+  <%= link_to 'Edit', edit_friend_path(@friend.id) %>
